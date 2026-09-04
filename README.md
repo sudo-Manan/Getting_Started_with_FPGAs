@@ -17,22 +17,58 @@ General Rules:
 
 ## Starting a new Project
 
+Open Vivado
+
 ![GUI_Vivado](images/initial_img0.png)
+
+Start a New Project: give the project name, select the directory/ location, and if you want to create a new sub-directory for the project
 
 ![New_Project_Step1](images/initial_img1.png)
 
+Select Project type, I have selected to add my sources later
 ![Step2](images/initial_img2.png)
+
+Select the default part (board or the silicon)
 
 ![Step4_part_select](images/initial_img3a.png)
 
+Since I did not want to add the sources at this stage, the tool skipped step 3
+
 ![Step4_part_select](images/initial_img3b.png)
 
+Check if everything is summarised correctly at the last step before finishing and starting to work in the project
 ![Step5](images/initial_img4.png)
 
 ---
 
 ## Project-1: Wiring Switches to LEDs 
 
+```
+project_1.srcs
+|---- constrs_1/new/pins.xdc
+|---- sources_1/new/Switches_To_LEDs.sv
+```
+
 ## Project-2: Lighting an LED with Logic Gates
 
+```
+project_2.srcs
+|---- constrs_1/new/pins.xdc
+|---- sim_1/new/And_Gate_Project_tb.sv
+|---- sources_1/new/And_Gate_Project.sv
+```
+
 ## Project-3: Blinking an LED
+
+```
+project_3_new.srcs
+|---- constrs_1/new/io_pins.xdc
+|---- sources_1/new/LED_Toggle.sv
+|---- sources_1/new/top.sv
+|---- sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+```
+
+## Project-4 
+
+```
+```
