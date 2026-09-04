@@ -5,6 +5,9 @@ FPGA used: AMD (Xilinx) `AUP-ZU3` (Real Digital) <br>
 Device Name (Default Part Name): `XCZU3EG-SFVC784-2-E` <br>
 Tool Used: `Vivado 2025.2` (free tier) on Windows 11 Home <br>
 
+AUP-ZU3 Board: 
+![FPGA Board](docs/aup_zu3_board.png)
+
 General Rules: 
 1. Following Little Endianness - LSB is the bit with lowest index value
 2. All the code is in SystemVerilog (its a superset of Verilog and verilog code will also work)
