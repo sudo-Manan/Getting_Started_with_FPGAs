@@ -16,6 +16,7 @@ reference.txt
 
 # Ignoring Visual Studio Code workspace files
 *.code-workspace
+reference_git.md
 
 # Ignoring old project3 folder - it used a different ip element for clocking
 project_3/
