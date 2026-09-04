@@ -13,3 +13,24 @@ utils_1/
 reference.txt
 *.log
 *.tmp
+
+# Ignoring Visual Studio Code workspace files
+*.code-workspace
+
+# Ignoring old project3 folder - it used a different ip element for clocking
+project_3/
+
+# Ignore the entire generated output folder
+*.gen/
+
+# Standard Vivado generated directories and caches
+*.cache/
+*.runs/
+*.sim/
+*.hw/
+*.ip_user_files/
+
+# Vivado log and journal files
+*.jou
+*.log
+*.str
