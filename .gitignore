@@ -1,8 +1,15 @@
 .Xil/
 *.cache/
+*.data/
+*.ipdefs/
 *.hw/
 *.ip_user_files/
 *.runs/
 *.sim/
+*.sdk/
 *.xpr
+utils_1/
 *.srcs/utils_1/
+reference.txt
+*.log
+*.tmp
