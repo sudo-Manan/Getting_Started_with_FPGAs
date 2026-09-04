@@ -1,9 +1,9 @@
 # Getting_Started_with_FPGAs
 Follows the book "GETTING STARTED WITH FPGAS" by "Russell Merrick"
 
-FPGA being used: AMD (Xilinx) AUP-ZU3 (Real Digital)
-Device Name (Default Part Name): XCZU3EG-SFVC784-2-E
-Tool Used: Vivado 2025.2 (free tier) on Windows 11 Home
+FPGA being used: AMD (Xilinx) AUP-ZU3 (Real Digital) <br>
+Device Name (Default Part Name): XCZU3EG-SFVC784-2-E <br>
+Tool Used: Vivado 2025.2 (free tier) on Windows 11 Home <br>
 
 General Rules: 
 1. Following Little Endianness - LSB is the bit with lowest index value
@@ -43,24 +43,39 @@ Check if everything is summarised correctly at the last step before finishing an
 
 ## Project-1: Wiring Switches to LEDs 
 
-```
+``` Project Structure
 project_1.srcs
 |---- constrs_1/new/pins.xdc
 |---- sources_1/new/Switches_To_LEDs.sv
 ```
 
+### Design Decisions:
+Made use of vector assignment available in system verilog instead of using 4 different assign statements <br>
+Kept 4 different ports for input and output each instead of taking them as vectors <br>
+Naming change: Used the values go from 3 down to 0, instead of 4 to 1 <br>
+Use push buttons for input switched <br>
+Use leds for the output ports <br>
+
+---
+
 ## Project-2: Lighting an LED with Logic Gates
 
-```
+``` Project Structure
 project_2.srcs
 |---- constrs_1/new/pins.xdc
 |---- sim_1/new/And_Gate_Project_tb.sv
 |---- sources_1/new/And_Gate_Project.sv
 ```
 
+### Design Decisions
+Implement `and`, `xor` gates instead of just and gate for more fun <br>
+The ouputs follow the following order going from leftmost (msb) led to the rightmost (lsb) led [XOR, AND] <br>
+
+---
+
 ## Project-3: Blinking an LED
 
-```
+``` Project Structure
 project_3_new.srcs
 |---- constrs_1/new/io_pins.xdc
 |---- sources_1/new/LED_Toggle.sv
@@ -68,7 +83,21 @@ project_3_new.srcs
 |---- sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 ```
 
-## Project-4 
+### Design Decisions
+Uses a Clocking Wizard IP to divide the 100MHz board clock down to 10MHz. <br>
+Used the board schematics from real digital website for internal clock properties clk_p at pin D7, with LVDS Voltage, and 100MHz frequency diff_clk <br>
+Used a `top.sv` module to connect on board clk, the clocking wizard ip, and the actual design together, and also wrote the constraint file accordingly <br>
+Also, wait for the clock to stabalize, before allowing input changes (`i_btn && clk_lock`) 
 
-```
-```
+---
+
+<!-- ## Project-4 
+
+``` Project Structure
+``` -->
+
+
+---
+
+## Planned additions: 
+per-project READMEs with resource utilization reports and implementation images.
