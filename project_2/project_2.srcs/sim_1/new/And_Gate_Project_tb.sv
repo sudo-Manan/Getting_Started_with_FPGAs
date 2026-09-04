@@ -27,11 +27,12 @@ module And_Gate_Project_tb;
     And_Gate_Project uut (i_sw0, i_sw1, o_and, o_xor);
     
     initial begin
-        $monitor("| in1 = %0b | in2 = %0b | and = %0b | xor = %0b |", i_sw0, i_sw1, o_and, o_xor);
-        #10; i_sw0 = 1'b0; i_sw1 = 1'b0;
-        #10; i_sw0 = 1'b1; i_sw1 = 1'b0;
-        #10; i_sw0 = 1'b1; i_sw1 = 1'b1;
-        #10; i_sw0 = 1'b0; i_sw1 = 1'b1;
+        //$dumpfile("dump.vcd"); $dumpvars;
+        $monitor("| Time = %0d | in1 = %0b | in2 = %0b | and = %0b | xor = %0b |", $time, i_sw0, i_sw1, o_and, o_xor);
+        #10; i_sw0 <= 1'b0; i_sw1 <= 1'b0;
+        #10; i_sw0 <= 1'b1; i_sw1 <= 1'b0;
+        #10; i_sw0 <= 1'b1; i_sw1 <= 1'b1;
+        #10; i_sw0 <= 1'b0; i_sw1 <= 1'b1;
         #10; $finish;
     end
     
