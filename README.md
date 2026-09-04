@@ -13,12 +13,20 @@ General Rules:
 5. Referenced the zu3.xdc file from realdigital.org for the AUP-ZU3 Board to write the constraint files
 6. Preference to Synchronous resets as mentioned in AMD Documentation
 
+---
+
 ## Starting a new Project
+
 ![GUI_Vivado](images/initial_img0.png)
+
 ![New_Project_Step1](images/initial_img1.png)
+
 ![Step2](images/initial_img2.png)
+
 ![Step4_part_select](images/initial_img3a.png)
+
 ![Step4_part_select](images/initial_img3b.png)
+
 ![Step5](images/initial_img4.png)
 
 ---
