@@ -35,3 +35,11 @@ project_3/
 *.jou
 *.log
 *.str
+*.vcd
+
+
+# Temporarily ignoring README files in project directories
+project_1/README.md
+project_2/README.md
+project_3_new/README.md
+project_4/README.md
