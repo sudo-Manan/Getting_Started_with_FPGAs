@@ -1,0 +1,9 @@
+# Force all project and source files to use LF in the repository
+*.v       text eol=lf
+*.sv      text eol=lf
+*.xdc     text eol=lf
+*.bd      text eol=lf
+*.xci     text eol=lf
+*.txt     text eol=lf
+# Force all documentation files to use LF in the repository
+*.md      text eol=lf
