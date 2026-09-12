@@ -1,15 +1,15 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Manan Jain
 // 
 // Create Date: 13.09.2026 02:33:00
 // Design Name: 
 // Module Name: mux_4to1
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Project Name: Basic Building Blocks
+// Target Devices: ZYNQ Ultrascale+ MPSoC AUP-ZU3 4GB Development Board
+// Tool Versions: 2025.2
+// Description: Based on "Getting Started with FPGAs" by "Russel Merrick" 
 // 
 // Dependencies: 
 // 
