@@ -64,6 +64,8 @@ project_1.srcs
 - Use Push Buttons for input port <br>
 - Use LEDs for the output ports <br>
 
+![Schematic_top](/images/project1/schem_synth1.png)
+
 Reference: Project#1, Chapter-2 of the book
 
 ---
@@ -116,7 +118,6 @@ Reference: Project#3, Chapter-4 of the book
 
 ---
 
-
 **Note:** Moving ahead all port declarations for the main logic module (not refering to the top module) will use `in_` prefix for input, and `out_` prefix for output ports.  
 ---
 
@@ -134,7 +135,9 @@ project_4.srcs
 |---- constrs_1/new/io_pins.xdc
 ```
 ### Design Decisions
-- Use two switches and two debouncing delays for comparision
+- Use two switches and two debouncing delays for comparision 
+- Use a 10MHz clock through the clockin wizard
+- The delays introduced to debounce the switches are 10ms and 20ms each.
 
 Reference: Project#4, Chapter-5 of the book 
 
