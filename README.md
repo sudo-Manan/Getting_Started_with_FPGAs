@@ -3,7 +3,9 @@ Follows the book "GETTING STARTED WITH FPGAS" by "Russell Merrick", hereafter re
 
 FPGA used: AMD (Xilinx) `AUP-ZU3` (Real Digital) <br>
 Device Name (Default Part Name): `XCZU3EG-SFVC784-2-E` <br>
-Tool Used: `Vivado 2025.2` (free tier) on Windows 11 Home <br>
+Tool Used:  `Vivado 2025.2` (free tier) on Windows 11 Home 
+
+Other Tools: [DigitalJS](https://digitaljs.tilk.eu/), [RapidRTL](https://www.rapidrtl.com/) as online compilers to check design synthesis/schematics for ASICs for comparision wherever needed.
 
 AUP-ZU3 Board: 
 ![FPGA Board](docs/aup_zu3_board.png)
@@ -140,6 +142,33 @@ project_4.srcs
 - The delays introduced to debounce the switches are 10ms and 20ms each.
 
 Reference: Project#4, Chapter-5 of the book 
+
+
+## Common Basic Building Blocks
+
+### Multiplexer
+
+### Demultiplexer
+
+
+**Note:**
+Here we went with a behvioral model but prefer a dataflow model to use the fpga resources properly with proper logic definition to get the most optimized design (when either working with asic or when the fpga tool does not optimize the design: we can later add a different design and compare the fpga resource utilization)
+```
+module demux_4to1(
+    input logic in_d,
+    input logic [1:0] in_sel,
+    output logic out3, out2, out1, out0
+);
+    assign out0 = (in_sel[1] ~| in_sel[0]) & in_d;
+    assign out1 = (~in_sel[1] & in_sel[0]) & in_d;
+    assign out2 = (in_sel[1] & ~in_sel[0]) & in_d;
+    assign out3 = (in_sel[1] & in_sel[0]) & in_d;
+endmodule
+```
+### Shift Register
+
+### LFSR - Linear Feedback Shift Register
+
 
 ---
 
