@@ -21,16 +21,16 @@
 
 
 module mux_4to1(
-    input logic in_mux_data [3:0],
-    input logic [1:0] in_mux_sel,
+    input logic [3:0] in_d,
+    input logic [1:0] in_sel,
     output logic out_mux
 );
     always_comb begin
-        case (in_mux_sel)
-            2'd0: out_mux = in_mux_data [0];
-            2'd1: out_mux = in_mux_data [1];
-            2'd2: out_mux = in_mux_data [2];
-            2'd3: out_mux = in_mux_data [3];
+        case (in_sel)
+            2'b00: out_mux = in_d [0];
+            2'b01: out_mux = in_d [1];
+            2'b10: out_mux = in_d [2];
+            2'b11: out_mux = in_d [3];
             default: out_mux = 1'b0;
         endcase
     end
