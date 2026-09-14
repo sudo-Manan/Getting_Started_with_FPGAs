@@ -21,12 +21,17 @@
 
 
 module demux_4to1(
-    input logic in_demux_data,
-    input logic [1:0] in_demux_sel,
-    output logic out_demux [3:0]
+    input logic in_d,
+    input logic [1:0] in_sel,
+    output logic out3, out2, out1, out0
 );
-    assign out_demux[0] = !in_demux_sel[1] & !in_demux_sel[0]? in_demux_data : 1'b0;
-    assign out_demux[1] = !in_demux_sel[1] & in_demux_sel[0]? in_demux_data : 1'b0;
-    assign out_demux[2] = in_demux_sel[1] & !in_demux_sel[0]? in_demux_data : 1'b0;
-    assign out_demux[3] = in_demux_sel[1] & in_demux_sel[0]? in_demux_data : 1'b0;
+    always_comb begin
+        {out3, out2, out1, out0} = 4'b0;
+        case (in_sel)
+            2'b00: out0 = in_d;
+            2'b01: out1 = in_d;
+            2'b10: out2 = in_d;
+            2'b11:  out3 = in_d;
+        endcase
+    end
 endmodule

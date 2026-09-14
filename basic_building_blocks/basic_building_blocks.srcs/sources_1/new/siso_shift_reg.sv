@@ -20,14 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module siso_shift_reg_4bit(
-    input logic in_clk, in_data,
-    output logic out_data
-    );
-    logic [3:0] r_shift;
+module siso_shift_reg(
+    input logic in_clk, in_d,
+    output logic out
+);
+    logic [3:0] r_reg;
+
     always_ff @(posedge in_clk) begin
-        r_shift[3:1] <= r_shift[2:0];
-        r_shift[0] <= in_data;
+        r_reg[0] <= in_d;
+        r_reg[3:1] <= r_reg[2:0];
     end
-    assign out_data = r_shift[3];
+
+    assign out_data = r_reg[3];
+
 endmodule
