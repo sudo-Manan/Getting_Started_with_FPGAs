@@ -1,18 +1,19 @@
 <!-- markdownlint-disable-file MD033 MD013 MD003-->
 # Project-1: Wiring Switches to LEDs
 
-**Overview:**
-When you press one of the push button switches, one of the LEDs should light up.<br>
-The led that lights up, is the one that is wired to the push button.<br>
-btn0 is connected to led0, btn1 to led1, and so on till btn3 and led3
+## Project Overview
 
-## Design Decisions
+- When user presses one of the push button switches, one of the LEDs should light up.<br>
+- The led that lights up, is the one that is wired to the push button.<br>
+- btn0 is connected to led0, btn1 to led1, and so on till btn3 and led3
 
-- Made use of vector assignment available in system verilog instead of using 4 different assign statements <br>
-- Kept 4 different ports for input and output each instead of taking them as vectors <br>
-- Naming change: Used the values go from 3 down to 0, instead of 4 to 1 <br>
-- Use Push Buttons for input port <br>
-- Use LEDs for the output ports <br>
+### Design Decisions
+
+- Made use of vector assignment available in system verilog instead of using 4 different assign statements.
+- Kept 4 different ports for input and output each instead of taking them as vectors.
+- Naming change: Used the values go from 3 down to 0, instead of 4 to 1.
+- Use Push Buttons for input port.
+- Use LEDs for the output ports.
 
 ---
 
@@ -50,4 +51,8 @@ INFO: [Synth 37-45] Linter Run Finished!
 - Implementation on FPGA.
 - Demonstarion of the implementation (either images or video).
 
-**Reference**: Project#1, Chapter-2 of the book
+---
+
+## *Reference*
+
+- Project#1, Chapter-2 of the book
