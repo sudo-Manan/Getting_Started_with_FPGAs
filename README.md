@@ -69,21 +69,14 @@ project_1.srcs
 
 When you change input through slide switches, the output changes, according to the logic
 
-``` Project Structure
+Project Structure
+
+```txt
 project_2.srcs
 |---- sources_1/new/And_Gate_Project.sv
 |---- constrs_1/new/pins.xdc
 |---- sim_1/new/And_Gate_Project_tb.sv
 ```
-
-### Design Decisions
-
-- Implement `and`, `xor` gates instead of just and gate for more fun <br>
-- Use slider switches for input port and led for output port. <br>
-- The ouputs follow the following order going from leftmost (msb) led to the rightmost (lsb) led [XOR, AND] <br>
-
-Reference: Project#2, Chapter-3 of the book <br>
-Reference (Testbench): page 72, Chapter-5 of the book
 
 ---
 
