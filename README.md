@@ -1,16 +1,19 @@
+<!-- markdownlint-disable-file MD033 MD013 MD003-->
 # Getting Started with FPGAs
+
 Follows the book "GETTING STARTED WITH FPGAS" by "Russell Merrick", hereafter referred to as the book.
 
 FPGA used: AMD (Xilinx) `AUP-ZU3` (Real Digital) <br>
 Device Name (Default Part Name): `XCZU3EG-SFVC784-2-E` <br>
-Tool Used:  `Vivado 2025.2` (free tier) on Windows 11 Home 
+Tool Used:  `Vivado 2025.2` (free tier) on Windows 11 Home
 
 Other Tools: [DigitalJS](https://digitaljs.tilk.eu/), [RapidRTL](https://www.rapidrtl.com/) as online compilers to check design synthesis/schematics for ASICs for comparision wherever needed.
 
-AUP-ZU3 Board: 
+AUP-ZU3 Board:
 ![FPGA Board](docs/aup_zu3_board.png)
 
-General Rules: 
+General Rules:
+
 1. Following Little Endianness - LSB is the bit with lowest index value
 2. All the code is in SystemVerilog (its a superset of Verilog and verilog code will also work)
 3. All the constraint files are  in `.xdc` format - for compatibility to Vivado and added before running synthesis
@@ -18,7 +21,7 @@ General Rules:
 5. Referenced the [zu3.xdc](/docs/zu3.xdc) file from realdigital.org for the AUP-ZU3 Board to write the constraint files
 6. Preference to Synchronous resets as mentioned in AMD Documentation
 7. Will make use vio (virtual input and output) and ILA (integrated Logic Analyzer), wherever needed. Have decided not to use it for the basic projects.
-8. Preference to built in Clocking Wizard for changing clock frequency. 
+8. Preference to built in Clocking Wizard for changing clock frequency.
 
 ---
 
@@ -33,42 +36,31 @@ Start a New Project: give the project a name, select the directory or location, 
 Select Project type: RTL Project. I have selected to add my sources later
 ![Step2](images/setup/initial_img2.png)
 
-Select the default part (board or the silicon) <br> 
+Select the default part (board or the silicon) <br>
 Since I did not want to add the sources at this stage, the tool skipped step 3
 ![Step4_part_select](images/setup/initial_img3a.png)
 
-You either select the part or the board, not both. <br> If you have not added board files to vivado or are having trouble with it, you can safely use the part selection, over the board selection. 
+You either select the part or the board, not both. <br> If you have not added board files to vivado or are having trouble with it, you can safely use the part selection, over the board selection.
 ![Step4_part_select](images/setup/initial_img3b.png)
 I will be using the board selection for my projects.
 
 Check if everything is summarised correctly at the last step before finishing and starting to work in the project
 ![Step5](images/setup/initial_img4.png)
 
-
-
 ---
 
-## Project-1: Wiring Switches to LEDs 
-<!-- ## [Project-1: Wiring Switches to LEDs](project_1/README.md) -->
+<!-- ## Project-1: Wiring Switches to LEDs -->
+## [Project-1: Wiring Switches to LEDs](project_1/README.md)
 
-When you press one of the push button switches, one of the LEDs should light up. 
+When you press one of the push button switches, one of the LEDs should light up.
 
-``` Project Structure
+Project Structure
+
+```txt
 project_1.srcs
 |---- sources_1/new/Switches_To_LEDs.sv
 |---- constrs_1/new/pins.xdc
 ```
-
-### Design Decisions:
-- Made use of vector assignment available in system verilog instead of using 4 different assign statements <br>
-- Kept 4 different ports for input and output each instead of taking them as vectors <br>
-- Naming change: Used the values go from 3 down to 0, instead of 4 to 1 <br>
-- Use Push Buttons for input port <br>
-- Use LEDs for the output ports <br>
-
-![Schematic_top](/images/project1/schem_synth1.png)
-
-Reference: Project#1, Chapter-2 of the book
 
 ---
 
@@ -85,6 +77,7 @@ project_2.srcs
 ```
 
 ### Design Decisions
+
 - Implement `and`, `xor` gates instead of just and gate for more fun <br>
 - Use slider switches for input port and led for output port. <br>
 - The ouputs follow the following order going from leftmost (msb) led to the rightmost (lsb) led [XOR, AND] <br>
@@ -108,11 +101,12 @@ project_3_new.srcs
 ```
 
 ### Design Decisions
+
 - Uses a Clocking Wizard IP to divide the 100MHz board clock down to 10MHz. <br>
-  Instead of using 100MHz onboard clock directly, or using a 25MHz clock (the onboard clock frequency for author's board) as used by the author, we have chosen to use a slower clock for allowing better input capturing. 
+  Instead of using 100MHz onboard clock directly, or using a 25MHz clock (the onboard clock frequency for author's board) as used by the author, we have chosen to use a slower clock for allowing better input capturing.
 - Used the board schematics from real digital website for internal clock properties clk_p at pin D7, with LVDS Voltage, and 100MHz frequency diff_clk <br>
 - Used a `top.sv` module to connect on board clk, the clocking wizard ip, and the actual design together, and also wrote the constraint file accordingly <br>
-- Also, wait for the clock to stabalize, before allowing input changes (`i_btn && clk_lock`) 
+- Also, wait for the clock to stabalize, before allowing input changes (`i_btn && clk_lock`)
 - Use Push Buttons for input port (toggle of the led)
 - Use LED for output port
 
@@ -126,7 +120,7 @@ Reference: Project#3, Chapter-4 of the book
 ## Project-4: Debouncing a Switch
 <!-- ## [Project-4: Debouncing a Switch](project_4/README.md) -->
 
-Despite the slower clock, we could still see the Project-3 setup glitch. So we will be debouncing that switch and making the clock slower by using a counter circuit. 
+Despite the slower clock, we could still see the Project-3 setup glitch. So we will be debouncing that switch and making the clock slower by using a counter circuit.
 
 ``` Project Structure
 project_4.srcs
@@ -136,13 +130,14 @@ project_4.srcs
 |---- sources_1/new/Debounce_Filter.sv
 |---- constrs_1/new/io_pins.xdc
 ```
+
 ### Design Decisions
-- Use two switches and two debouncing delays for comparision 
+
+- Use two switches and two debouncing delays for comparision
 - Use a 10MHz clock through the clockin wizard
 - The delays introduced to debounce the switches are 10ms and 20ms each.
 
-Reference: Project#4, Chapter-5 of the book 
-
+Reference: Project#4, Chapter-5 of the book
 
 ## Common Basic Building Blocks
 
@@ -150,10 +145,10 @@ Reference: Project#4, Chapter-5 of the book
 
 ### Demultiplexer
 
-
 **Note:**
 Here we went with a behvioral model but prefer a dataflow model to use the fpga resources properly with proper logic definition to get the most optimized design (when either working with asic or when the fpga tool does not optimize the design: we can later add a different design and compare the fpga resource utilization)
-```
+
+```systemverilog
 module demux_4to1(
     input logic in_d,
     input logic [1:0] in_sel,
@@ -165,12 +160,13 @@ module demux_4to1(
     assign out3 = (in_sel[1] & in_sel[0]) & in_d;
 endmodule
 ```
+
 ### Shift Register
 
 ### LFSR - Linear Feedback Shift Register
 
-
 ---
 
-## Planned additions: 
+## Planned additions
+
 per-project READMEs with resource utilization reports and implementation images.
