@@ -58,14 +58,14 @@ Project Structure
 
 ```txt
 project_1.srcs
-|---- sources_1/new/Switches_To_LEDs.sv
-|---- constrs_1/new/pins.xdc
+|---- sources_1/new/Switches_To_LEDs.sv     # top level design
+|---- constrs_1/new/pins.xdc        # constraint file
 ```
 
 ---
 
-## Project-2: Lighting an LED with Logic Gates
-<!-- ## [Project-2: Lighting an LED with Logic Gates](project_2/README.md) -->
+<!-- ## Project-2: Lighting an LED with Logic Gates -->
+## [Project-2: Lighting an LED with Logic Gates](project_2/README.md)
 
 When you change input through slide switches, the output changes, according to the logic
 
@@ -73,19 +73,21 @@ Project Structure
 
 ```txt
 project_2.srcs
-|---- sources_1/new/And_Gate_Project.sv
-|---- constrs_1/new/pins.xdc
-|---- sim_1/new/And_Gate_Project_tb.sv
+|---- sources_1/new/And_Gate_Project.sv     # top level design
+|---- constrs_1/new/pins.xdc        # constraint file
+|---- sim_1/new/And_Gate_Project_tb.sv      # testbench for simulation
 ```
 
 ---
 
-## Project-3: Blinking an LED
-<!-- ## [Project-3: Blinking an LED](/project_3_new/README.md) -->
+<!-- ## Project-3: Blinking an LED -->
+## [Project-3: Blinking an LED](/project_3_new/README.md)
 
-When the user presses and releases the push button, the LED toggles. Its a sequencial logic circuit, as it registers the pressof the button and its release to trigger toggling.
+When the user presses and releases the push button, the LED toggles. It is a sequencial logic circuit, as it registers the press of the button and its release to trigger toggling.
 
-``` Project Structure
+Project Structure
+
+```txt
 project_3_new.srcs
 |---- sources_1/new/top.sv 
 |---- sources_1/ip/clk_wiz_0/clk_wiz_0.xci
@@ -93,21 +95,10 @@ project_3_new.srcs
 |---- constrs_1/new/io_pins.xdc
 ```
 
-### Design Decisions
-
-- Uses a Clocking Wizard IP to divide the 100MHz board clock down to 10MHz. <br>
-  Instead of using 100MHz onboard clock directly, or using a 25MHz clock (the onboard clock frequency for author's board) as used by the author, we have chosen to use a slower clock for allowing better input capturing.
-- Used the board schematics from real digital website for internal clock properties clk_p at pin D7, with LVDS Voltage, and 100MHz frequency diff_clk <br>
-- Used a `top.sv` module to connect on board clk, the clocking wizard ip, and the actual design together, and also wrote the constraint file accordingly <br>
-- Also, wait for the clock to stabalize, before allowing input changes (`i_btn && clk_lock`)
-- Use Push Buttons for input port (toggle of the led)
-- Use LED for output port
-
-Reference: Project#3, Chapter-4 of the book
-
 ---
 
 **Note:** Moving ahead all port declarations for the main logic module (not refering to the top module) will use `in_` prefix for input, and `out_` prefix for output ports.  
+
 ---
 
 ## Project-4: Debouncing a Switch
@@ -115,7 +106,9 @@ Reference: Project#3, Chapter-4 of the book
 
 Despite the slower clock, we could still see the Project-3 setup glitch. So we will be debouncing that switch and making the clock slower by using a counter circuit.
 
-``` Project Structure
+Project Structure
+
+```txt
 project_4.srcs
 |---- sources_1/new/top.sv 
 |---- sources_1/ip/clk_wiz_0/clk_wiz_0.xci
@@ -132,7 +125,7 @@ project_4.srcs
 
 Reference: Project#4, Chapter-5 of the book
 
-## Common Basic Building Blocks
+## Basic Building Blocks
 
 ### Multiplexer
 

@@ -40,5 +40,5 @@ project_3/
 *.svg
 
 # Temporarily ignoring README files in project directories
-project_3_new/README.md
 project_4/README.md
+basic_building_blocks/README.md
