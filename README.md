@@ -117,39 +117,34 @@ project_4.srcs
 |---- constrs_1/new/io_pins.xdc
 ```
 
-### Design Decisions
-
-- Use two switches and two debouncing delays for comparision
-- Use a 10MHz clock through the clockin wizard
-- The delays introduced to debounce the switches are 10ms and 20ms each.
-
-Reference: Project#4, Chapter-5 of the book
-
 ## Basic Building Blocks
 
 ### Multiplexer
 
+A mux takes multiple inputs, and gives one output. We have made a 4:1 mux. It takes 4 inputs, and has a 2 select line, and a single bit output.
+
 ### Demultiplexer
 
-**Note:**
-Here we went with a behvioral model but prefer a dataflow model to use the fpga resources properly with proper logic definition to get the most optimized design (when either working with asic or when the fpga tool does not optimize the design: we can later add a different design and compare the fpga resource utilization)
-
-```systemverilog
-module demux_4to1(
-    input logic in_d,
-    input logic [1:0] in_sel,
-    output logic out3, out2, out1, out0
-);
-    assign out0 = (in_sel[1] ~| in_sel[0]) & in_d;
-    assign out1 = (~in_sel[1] & in_sel[0]) & in_d;
-    assign out2 = (in_sel[1] & ~in_sel[0]) & in_d;
-    assign out3 = (in_sel[1] & in_sel[0]) & in_d;
-endmodule
-```
+A demux takes a single input and gives multiple outputs. We have implemented a 1:4 demux. It takes one input, has 2 select lines, and has 4 output lines.
 
 ### Shift Register
 
 ### LFSR - Linear Feedback Shift Register
+
+---
+
+## Project-5: Selectively Blinking an LED
+<!-- ## [Project-5: Selectively Blinking an LED](project_5/README.md) -->
+
+Project Structure
+
+```txt
+project_5.srcs
+|---- sources_1/new/demux_lfsr_project_top.sv
+|---- sources_1/new/lfsr_24.sv
+|---- sources_1/new/demux_1to4.sv
+|---- constrs_1/new/io_pins.xdc
+```
 
 ---
 
