@@ -62,6 +62,12 @@ project_1.srcs
 |---- constrs_1/new/pins.xdc        # constraint file
 ```
 
+### Learnings: Project#1
+
+- Writing SystemVerilog Code
+- Writing Physcal Constraints
+<!-- - Implementation & Writing Bitstream to hardware -->
+
 ---
 
 <!-- ## Project-2: Lighting an LED with Logic Gates -->
@@ -77,6 +83,12 @@ project_2.srcs
 |---- constrs_1/new/pins.xdc        # constraint file
 |---- sim_1/new/And_Gate_Project_tb.sv      # testbench for simulation
 ```
+
+### Learnings: Project#2
+
+- Writing Testbenches and running behvioural simulation
+- Running Linter
+- Reading Synthesis Report & checking utilization
 
 ---
 
@@ -94,6 +106,10 @@ project_3_new.srcs
 |---- sources_1/new/LED_Toggle.sv
 |---- constrs_1/new/io_pins.xdc
 ```
+
+### Learnings: Project#3
+
+- Using clocking wizard to generate a 10MHz clock
 
 ---
 
@@ -116,6 +132,11 @@ project_4.srcs
 |---- sources_1/new/Debounce_Filter.sv
 |---- constrs_1/new/io_pins.xdc
 ```
+
+### Learnings: Project#4
+
+- Reason for gliches in switches
+- Deboucing a switch
 
 ## Basic Building Blocks
 
@@ -145,6 +166,12 @@ project_5.srcs
 |---- sources_1/new/demux_1to4.sv
 |---- constrs_1/new/io_pins.xdc
 ```
+
+### Learnings: Project#5
+
+- Timing Constraints in `.xdc` file
+- Clock division using lfsr
+- Addition of clock contraint `create_clock` & buffers (`IBUFDS` & `BUFG`) from template to the design
 
 ---
 
