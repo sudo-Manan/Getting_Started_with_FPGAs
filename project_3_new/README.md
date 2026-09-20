@@ -12,15 +12,25 @@ Whenever user presses and releases the push button, after the 10MHz clk has stab
 
 <!-- We feed the differencial Clock to the MMCM builtin IP core via the clock wizard of vivado to generate a 10MHz clock, which  is slower, and gives enough time for the user to press and release the push button for the toggle to actually occur. -->
 
+**Project Structure**:
+
+```txt
+project_3_new.srcs
+|---- sources_1/new/top.sv 
+|---- sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+|---- sources_1/new/LED_Toggle.sv
+|---- constrs_1/new/io_pins.xdc
+```
+
 ### Design Decisions
 
 - Uses a Clocking Wizard IP to divide the 100MHz board clock down to 10MHz. <br>
-  Instead of using 100MHz onboard clock directly, or using a 25MHz clock, as used in the reference material, we have chosen to use a slower clock for allowing better input capturing.
-- Used the board schematics from real digital website for internal clock properties clk_p at pin D7, with LVDS Voltage, and 100MHz frequency diff_clk
-- Used a `top.sv` module to connect on board clk, the clocking wizard ip, and the actual design together, and also wrote the constraint file accordingly
+-Instead of using 100MHz onboard clock directly, or using a 25MHz clock, as used in the reference material, we have chosen to use a slower clock for allowing better input capturing.
+<!-- - Used the board schematics from real digital website for internal clock properties clk_p at pin D7, with LVDS Voltage, and 100MHz frequency diff_clk
+- Used a `top.sv` module to connect on board clk, the clocking wizard ip, and the actual design together, and also wrote the constraint file accordingly -->
 - Also, wait for the clock to stabalize, before allowing input changes (`i_btn && clk_lock`)
-- Use Push Buttons for input port (toggle of the led)
-- Use LED for output port
+<!-- - Use Push Buttons for input port (toggle of the led)
+- Use LED for output port -->
 
 <!-- 
 top:

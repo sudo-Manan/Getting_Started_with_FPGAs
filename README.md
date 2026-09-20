@@ -54,18 +54,10 @@ Check if everything is summarised correctly at the last step before finishing an
 
 When you press one of the push button switches, one of the LEDs should light up.
 
-Project Structure
-
-```txt
-project_1.srcs
-|---- sources_1/new/Switches_To_LEDs.sv     # top level design
-|---- constrs_1/new/pins.xdc        # constraint file
-```
-
-### Learnings: Project#1
+**Learnings: Project-1**:
 
 - Writing SystemVerilog Code
-- Writing Physcal Constraints
+- Writing Physical Constraints
 <!-- - Implementation & Writing Bitstream to hardware -->
 
 ---
@@ -75,16 +67,7 @@ project_1.srcs
 
 When you change input through slide switches, the output changes, according to the logic
 
-Project Structure
-
-```txt
-project_2.srcs
-|---- sources_1/new/And_Gate_Project.sv     # top level design
-|---- constrs_1/new/pins.xdc        # constraint file
-|---- sim_1/new/And_Gate_Project_tb.sv      # testbench for simulation
-```
-
-### Learnings: Project#2
+**Learnings: Project-2**:
 
 - Writing Testbenches and running behvioural simulation
 - Running Linter
@@ -97,17 +80,7 @@ project_2.srcs
 
 When the user presses and releases the push button, the LED toggles. It is a sequencial logic circuit, as it registers the press of the button and its release to trigger toggling.
 
-Project Structure
-
-```txt
-project_3_new.srcs
-|---- sources_1/new/top.sv 
-|---- sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-|---- sources_1/new/LED_Toggle.sv
-|---- constrs_1/new/io_pins.xdc
-```
-
-### Learnings: Project#3
+**Learnings: Project-3**:
 
 - Using clocking wizard to generate a 10MHz clock
 
@@ -122,20 +95,9 @@ project_3_new.srcs
 
 Despite the slower clock, we could still see the Project-3 setup glitch. So we will be debouncing that switch and making the clock slower by using a counter circuit.
 
-Project Structure
+**Learnings: Project-4**:
 
-```txt
-project_4.srcs
-|---- sources_1/new/top.sv 
-|---- sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-|---- sources_1/new/LED_Toggle.sv
-|---- sources_1/new/Debounce_Filter.sv
-|---- constrs_1/new/io_pins.xdc
-```
-
-### Learnings: Project#4
-
-- Reason for gliches in switches
+- Reason for gliches in inputs from switches
 - Deboucing a switch
 
 ## Basic Building Blocks
@@ -152,22 +114,20 @@ A demux takes a single input and gives multiple outputs. We have implemented a 1
 
 ### LFSR - Linear Feedback Shift Register
 
+### Up Counter
+
+### Memory
+
+#### RAM
+
+#### FIFO
+
 ---
 
 ## Project-5: Selectively Blinking an LED
 <!-- ## [Project-5: Selectively Blinking an LED](project_5/README.md) -->
 
-Project Structure
-
-```txt
-project_5.srcs
-|---- sources_1/new/demux_lfsr_project_top.sv
-|---- sources_1/new/lfsr_24.sv
-|---- sources_1/new/demux_1to4.sv
-|---- constrs_1/new/io_pins.xdc
-```
-
-### Learnings: Project#5
+**Learnings: Project-5**:
 
 - Timing Constraints in `.xdc` file
 - Clock division using lfsr

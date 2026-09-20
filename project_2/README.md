@@ -7,6 +7,15 @@
 - These switches both drive the two gates, `and`, and `xor`.
 - In turn, the ouput of these gates, drive one led, each.
 
+**Project Structure**:
+
+```txt
+project_2.srcs
+|---- sources_1/new/And_Gate_Project.sv     # top level design
+|---- constrs_1/new/pins.xdc        # constraint file
+|---- sim_1/new/And_Gate_Project_tb.sv      # testbench for simulation
+```
+
 ### Design Decisions
 
 - Implement `and`, `xor` gates instead of just and gate for more fun <br>
@@ -15,7 +24,7 @@
 
 ---
 
-## Lint & Elaboration
+## Linter
 
 ### Linter Output
 
@@ -64,7 +73,9 @@ $finish called at time : 50 ns
 
 ---
 
-## Synthesis Report
+## Synthesis
+
+### Synthesis Report Log
 
 ```tcl
 Start Writing Synthesis Report
@@ -90,13 +101,15 @@ Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:3
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
 ```
 
-### Post-synth Schematic
+### Post-Synthesis Schematic
 
 ![Scematic](../images/project2/schem_synth.png)
 
 ---
 
 ## Implementation
+
+### Utilization
 
 ![Post-Implementation Utilization](../images/project2/utiliz_impl.png)
 
