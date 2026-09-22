@@ -24,7 +24,7 @@ module LED_Toggle(
     input logic clk_10mhz, i_btn,
     output logic o_led);
     
-    logic r_btn, r_led;
+    logic r_btn = 1'b0, r_led = 1'b0;
     
     always_ff @(posedge clk_10mhz) begin
         r_btn <= i_btn;
