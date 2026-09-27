@@ -13,6 +13,7 @@ utils_1/
 reference.txt
 *.log
 *.tmp
+*.wcfg
 
 # Ignoring Visual Studio Code workspace files
 *.vscode
@@ -40,6 +41,6 @@ project_3/
 *.svg
 
 # Temporarily ignoring README files in project directories
-project_4/README.md
 basic_building_blocks/README.md
 project_5/README.md
+img_ignore/
