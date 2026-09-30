@@ -54,10 +54,12 @@ INFO: [Synth 37-45] Linter Run Finished!
 
 ---
 
-## Planned Updates
-
-- Implementation on FPGA.
-- Demonstarion of the implementation (either images or video).
+Demo Video:<br>
+<!-- [![Project Demo](https://img.youtube.com/vi/see_1Q9hq7s/maxresdefault.jpg)](https://youtube.com/shorts/see_1Q9hq7s?feature=share) -->
+<a href="https://youtube.com/shorts/nrHFqv3ak0E?feature=share">
+  <img src="https://img.youtube.com/vi/nrHFqv3ak0E/maxresdefault.jpg"
+       width="360" alt="Project Demo"/>
+</a>
 
 ---
 

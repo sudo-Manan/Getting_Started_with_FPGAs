@@ -49,7 +49,13 @@ Check if everything is summarised correctly at the last step before finishing an
 
 ---
 
-<!-- ## Project-1: Wiring Switches to LEDs -->
+## Generate Bitstream & Program Harware Demonstration
+
+(Click on image to go to video demo)<br>
+[![Generate Bitstream & Program Harware Demonstration](https://img.youtube.com/vi/wjTXPKl22pU/mqdefault.jpg)](https://youtu.be/wjTXPKl22pU)
+
+---
+
 ## [Project-1: Wiring Switches to LEDs](project_1/README.md)
 
 When you press one of the push button switches, one of the LEDs should light up.
@@ -58,11 +64,12 @@ When you press one of the push button switches, one of the LEDs should light up.
 
 - Writing SystemVerilog Code
 - Writing Physical Constraints
-<!-- - Implementation & Writing Bitstream to hardware -->
+- Implementation & Writing Bitstream to hardware
+
+[Demo Video](https://youtube.com/shorts/nrHFqv3ak0E?feature=share)
 
 ---
 
-<!-- ## Project-2: Lighting an LED with Logic Gates -->
 ## [Project-2: Lighting an LED with Logic Gates](project_2/README.md)
 
 When you change input through slide switches, the output changes, according to the logic
@@ -73,9 +80,10 @@ When you change input through slide switches, the output changes, according to t
 - Running Linter
 - Reading Synthesis Report & checking utilization
 
+[Demo Video](https://youtube.com/shorts/see_1Q9hq7s?feature=share)
+
 ---
 
-<!-- ## Project-3: Blinking an LED -->
 ## [Project-3: Blinking an LED](/project_3_new/README.md)
 
 When the user presses and releases the push button, the LED toggles. It is a sequencial logic circuit, as it registers the press of the button and its release to trigger toggling.
@@ -84,13 +92,14 @@ When the user presses and releases the push button, the LED toggles. It is a seq
 
 - Using clocking wizard to generate a 10MHz clock
 
+[Demo Video](https://youtu.be/WUblVmYnfNk)
+
 ---
 
 **Note:** Moving ahead all port declarations for the main logic module (not refering to the top module) will use `in_` prefix for input, and `out_` prefix for output ports.  
 
 ---
 
-<!-- ## Project-4: Debouncing a Switch -->
 ## [Project-4: Debouncing a Switch](project_4/README.md)
 
 Despite the slower clock, we could still see the Project-3 setup glitch. So we will be debouncing that switch and making the clock slower by using a counter circuit.
@@ -99,6 +108,8 @@ Despite the slower clock, we could still see the Project-3 setup glitch. So we w
 
 - Reason for gliches in inputs from switches
 - Deboucing a switch
+
+[Demo Video](https://youtu.be/gVNNTs2BxKI)
 
 ## Basic Building Blocks
 
@@ -154,6 +165,8 @@ A demux takes a single input and gives multiple outputs. We have implemented a 1
 ```tcl
 create_clock -name <clk_name> -period 10.000 [get_ports <sys_clk>]
 ```
+
+[Demo Video](https://youtu.be/IWhE_IEfWbI)
 
 ---
 

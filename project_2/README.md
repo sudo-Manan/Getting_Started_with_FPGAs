@@ -115,11 +115,14 @@ Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
 
 ---
 
-<!-- ## Programming the FPGA & Observing the Outputs -->
-## Planned Updates
+## Programming the FPGA & Observing the Outputs
 
-- Programming the FPGA.
-- Demonstarion of the implementation (either images or video).
+Demo Video:<br>
+<!-- [![Project Demo](https://img.youtube.com/vi/see_1Q9hq7s/maxresdefault.jpg)](https://youtube.com/shorts/see_1Q9hq7s?feature=share) -->
+<a href="https://youtube.com/shorts/see_1Q9hq7s?feature=share">
+  <img src="https://img.youtube.com/vi/see_1Q9hq7s/maxresdefault.jpg"
+       width="360" alt="Project Demo"/>
+</a>
 
 ---
 

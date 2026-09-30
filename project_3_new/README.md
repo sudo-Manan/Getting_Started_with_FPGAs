@@ -105,10 +105,10 @@ Report Cell Usage:
 
 ---
 
-## Planned Updates
+## Programming the FPGA & Observing the Outputs
 
-- Programming the FPGA.
-- Demonstration of the implementation (either images or video).
+Demo Video:<br>
+[![Project Demo](https://img.youtube.com/vi/WUblVmYnfNk/mqdefault.jpg)](https://youtu.be/WUblVmYnfNk)
 
 ---
 

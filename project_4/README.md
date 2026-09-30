@@ -142,9 +142,13 @@ Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
 
 ---
 
+## Programming the FPGA & Observing the Outputs
+
+Demo Video:<br>
+[![Project Demo](https://img.youtube.com/vi/gVNNTs2BxKI/mqdefault.jpg)](https://youtu.be/gVNNTs2BxKI)
+
 ## Planned Updates
 
-- Programming the FPGA, demonstarion (either images or video).
 - Comparision of debounced and non-debounced push button.
 
 ---
