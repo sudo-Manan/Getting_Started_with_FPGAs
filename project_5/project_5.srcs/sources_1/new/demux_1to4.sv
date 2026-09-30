@@ -26,7 +26,7 @@ module demux_1to4(
     output logic out_d3, out_d2, out_d1, out_d0
 );
     
-    assign out_d0 = (in_sel1 ~^ in_sel0) & in_d;
+    assign out_d0 = ~(in_sel1 | in_sel0) & in_d;
     assign out_d1 = (!in_sel1 & in_sel0) & in_d;
     assign out_d2 = (in_sel1 & !in_sel0) & in_d;
     assign out_d3 = (in_sel1 & in_sel0) & in_d;
