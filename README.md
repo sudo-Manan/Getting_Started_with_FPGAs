@@ -18,7 +18,7 @@ General Rules:
 2. All code is in SystemVerilog (superset of Verilog; plain Verilog will also work)
 3. All constraint files are in `.xdc` format - added before running synthesis
 4. Optional testbenches are used to verify functionality before programming the FPGA
-5. Referenced the [zu3.xdc](/docs/zu3.xdc) file from realdigital.org for the AUP-ZU3 board
+5. Referenced the [zu3.xdc](/docs/zu3.xdc) file from [Real Digital](realdigital.org) for the AUP-ZU3 board
 6. Preference for synchronous resets as per AMD documentation
 7. VIO (Virtual Input/Output) and ILA (Integrated Logic Analyzer) will be used where needed; not used for basic projects
 8. Preference for the built-in Clocking Wizard for clock frequency generation
@@ -47,10 +47,10 @@ Verify the summary before finishing.
 
 ---
 
-## Generate Bitstream & Program Harware Demonstration
+## Generate Bitstream & Program Hardware Demonstration
 
 (Click on image to go to video demo)<br>
-[![Generate Bitstream & Program Harware Demonstration](https://img.youtube.com/vi/wjTXPKl22pU/mqdefault.jpg)](https://youtu.be/wjTXPKl22pU)
+[![Generate Bitstream & Program Hardware Demonstration](https://img.youtube.com/vi/wjTXPKl22pU/mqdefault.jpg)](https://youtu.be/wjTXPKl22pU)
 
 ---
 
@@ -74,7 +74,7 @@ Slide switch inputs drive AND and XOR gates; each gate output drives one LED.
 
 **Learnings: Project-2**:
 
-- Writing Testbenches and running behvioural simulation
+- Writing Testbenches and running behavioural simulation
 - Running Linter
 - Reading Synthesis Report & checking utilization
 
@@ -104,8 +104,8 @@ Despite the slower clock in Project-3, glitches were still observed. This projec
 
 **Learnings: Project-4**:
 
-- Reason for gliches in inputs from switches
-- Deboucing a switch
+- Reason for glitches in inputs from switches
+- Debouncing a switch
 
 [Demo Video](https://youtu.be/gVNNTs2BxKI)
 
@@ -116,15 +116,15 @@ Commonly used digital logic building blocks covered across projects: multiplexer
 - Multiplexer: A mux takes multiple inputs, and gives one output. We have made a 4:1 mux. It takes 4 inputs, and has a 2 select line, and a single bit output.
 - Demultiplexer: A demux takes a single input and gives multiple outputs. We have implemented a 1:4 demux. It takes one input, has 2 select lines, and has 4 output lines.
 - Shift Register: N number of flip flops chained together, where the output of 1st flip flop is the input to the next flip flop.
-- Linear Feedback Shift Register: When certain flip flops of the shift registers are tapped into and thier output is used as input for either an XOR or an XNOR gate. The output of this gate is then fed back to the input of the beginning of the shift register.
+- Linear Feedback Shift Register: When certain flip flops of the shift registers are tapped into and their output is used as input for either an XOR or an XNOR gate. The output of this gate is then fed back to the input of the beginning of the shift register.
 - Up Counter: A counter is used to count to a particular value, and then restart from the initial value again. We can configure it based on our needs (skip specific numbers or a certain set of number, count in a specific code - binary, gray, etc.).
 - Memory: Mainly made from Flip Flops, or RAM (SRAM or DRAM), when talking about volatile memory.
   - RAM: Bigger memory sets in a specific configuration, that can be accessed *randomly* at the positive edge of a clock cycle.
   - FIFO: The data written first is accessed first.
-    - Synchronous FIFO: Data written and read using syncronous clock and in same clock domain
-    - Asynchronous FIFO: There are two clocks involved, where read clock can be faster or slower in comparison to write clock. This FIFO is primarily used to share data between components of diferent clock domains.
+    - Synchronous FIFO: Data written and read using synchronous clock and in same clock domain
+    - Asynchronous FIFO: There are two clocks involved, where read clock can be faster or slower in comparison to write clock. This FIFO is primarily used to share data between components of different clock domains.
 
-**Note**: While *Asynchronous FIFO* was only discussed in the book, after a few different iterations (including a block level approach (using counters for pointers, exchanging pointers via 2 - flip flop syncronizers, bin2gray code converters and comparators); using a write always block, a read always block, and using a modulo-counter for resetting pointers), the current design was made to explore the next step to the sync_fifo.
+**Note**: While *Asynchronous FIFO* was only discussed in the book, after a few different iterations (including a block level approach (using counters for pointers, exchanging pointers via 2 - flip flop synchronizers, bin2gray code converters and comparators); using a write always block, a read always block, and using a modulo-counter for resetting pointers), the current design was made to explore the next step to the sync_fifo.
 
 ---
 

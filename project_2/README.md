@@ -34,7 +34,7 @@ INFO: [Synth 37-45] Linter Run Finished!
 
 ### Post-Elaboration Schematic
 
-![Scematic](/images/project2/schem_elaborated_des.png)
+![Schematic](/images/project2/schem_elaborated_des.png)
 
 ---
 
@@ -86,7 +86,7 @@ Finished Writing Synthesis Report
 
 ### Post-Synthesis Schematic
 
-![Scematic](/images/project2/schem_synth.png)
+![Schematic](/images/project2/schem_synth.png)
 
 ---
 

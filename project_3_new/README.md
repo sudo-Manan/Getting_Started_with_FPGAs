@@ -31,7 +31,7 @@ project_3_new.srcs
 
 ## Post Elaboration Schematic
 
-![Scematic](/images/project3/schem_elaborated_des.png)
+![Schematic](/images/project3/schem_elaborated_des.png)
 
 ---
 
