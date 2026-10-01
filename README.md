@@ -126,7 +126,7 @@ Commonly used building blocks of digital logic:
     - Synchronous FIFO: Data written and read using syncronous clock and in same clock domain
     - Asynchronous FIFO: There are two clocks involved, where read clock can be faster or slower in comparison to write clock. This FIFO is primarily used to share data between components of diferent clock domains.
 
-**Note**: While *Asynchronous FIFO* was only discussed in the book, after a few different iterations (including a block level approach (using counters for pointers, exchanging pointers via 2- flip flop syncronizers, bin2gray code converters and comparaators); using a write always block, a read always block, and using a modulo-counter for resetting pointers), the current design was made to explore the next step to the sync_fifo.
+**Note**: While *Asynchronous FIFO* was only discussed in the book, after a few different iterations (including a block level approach (using counters for pointers, exchanging pointers via 2 - flip flop syncronizers, bin2gray code converters and comparators); using a write always block, a read always block, and using a modulo-counter for resetting pointers), the current design was made to explore the next step to the sync_fifo.
 
 <!-- 
 ### Multiplexer
@@ -152,8 +152,8 @@ A demux takes a single input and gives multiple outputs. We have implemented a 1
 
 ---
 
-## Project-5: Selectively Blinking an LED
-<!-- ## [Project-5: Selectively Blinking an LED](project_5/README.md) -->
+<!-- ## Project-5: Selectively Blinking an LED -->
+## [Project-5: Selectively Blinking an LED](project_5/README.md)
 
 **Learnings: Project-5**:
 
@@ -170,6 +170,8 @@ create_clock -name <clk_name> -period 10.000 [get_ports <sys_clk>]
 
 ---
 
-## Planned additions
+## Planned Updates
 
-per-project READMEs with resource utilization reports and implementation images.
+- per-project READMEs with resource utilization reports and implementation images.
+- Project-6
+- further work on basic building blocks, fsm(s)
