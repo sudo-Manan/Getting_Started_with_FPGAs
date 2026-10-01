@@ -3,24 +3,15 @@
 
 ## Project Overview
 
-- When user presses one of the push button switches, one of the LEDs should light up.<br>
-- The led that lights up, is the one that is wired to the push button.<br>
-- btn0 is connected to led0, btn1 to led1, and so on till btn3 and led3
-
-<!-- ### Design Decisions
-
-- Made use of vector assignment available in system verilog instead of using 4 different assign statements.
-- Kept 4 different ports for input and output each instead of taking them as vectors.
-- Naming change: Used the values go from 3 down to 0, instead of 4 to 1.
-- Use Push Buttons for input port.
-- Use LEDs for the output ports. -->
+- When user presses one of the push button switches, the corresponding LED should light up.
+- LED lights up: `btn0 -> led0`, `btn1 -> led1`, `btn2 -> led2`, `btn3 -> led3`
 
 **Project Structure**:
 
 ```txt
 project_1.srcs
-|---- sources_1/new/Switches_To_LEDs.sv     # top level design
-|---- constrs_1/new/pins.xdc        # constraint file
+|---- sources_1/new/Switches_To_LEDs.sv     # top-level design
+|---- constrs_1/new/pins.xdc                # constraint file
 ```
 
 ---
@@ -48,14 +39,14 @@ INFO: [Synth 37-45] Linter Run Finished!
 
 ---
 
-## Post Synthesis Schematic
+## Post-Synthesis Schematic
 
-![Schematic_top](/images/project1/schem_synth1.png)
+![Schematic](/images/project1/schem_synth1.png)
 
 ---
 
-Demo Video:<br>
-<!-- [![Project Demo](https://img.youtube.com/vi/see_1Q9hq7s/maxresdefault.jpg)](https://youtube.com/shorts/see_1Q9hq7s?feature=share) -->
+## Hardware Validation
+
 <a href="https://youtube.com/shorts/nrHFqv3ak0E?feature=share">
   <img src="https://img.youtube.com/vi/nrHFqv3ak0E/maxresdefault.jpg"
        width="360" alt="Project Demo"/>
@@ -63,6 +54,6 @@ Demo Video:<br>
 
 ---
 
-## *Reference*
+## Reference
 
-- Project#1, Chapter-2 of the book
+- Project 1, Chapter 2 of the book

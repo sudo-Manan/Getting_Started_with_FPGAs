@@ -5,51 +5,36 @@
 
 - User can change the input via slider switches: sw0, sw1.
 - These switches both drive the two gates, `and`, and `xor`.
-- In turn, the ouput of these gates, drive one led, each.
+- Each gate output drives one LED: [XOR, AND] from leftmost (MSB) to rightmost (LSB).
 
 **Project Structure**:
 
 ```txt
 project_2.srcs
-|---- sources_1/new/And_Gate_Project.sv     # top level design
-|---- constrs_1/new/pins.xdc        # constraint file
-|---- sim_1/new/And_Gate_Project_tb.sv      # testbench for simulation
+|---- sources_1/new/And_Gate_Project.sv     # top-level design
+|---- constrs_1/new/pins.xdc                # constraint file
+|---- sim_1/new/And_Gate_Project_tb.sv      # testbench
 ```
 
 ### Design Decisions
 
-- Implement `and`, `xor` gates instead of just and gate for more fun <br>
-- Use slider switches for input port and led for output port. <br>
-- The ouputs follow the following order going from leftmost (msb) led to the rightmost (lsb) led [XOR, AND] <br>
+- Implemented both `and` and `xor` gates rather than just `and`.
+- Slide switches for input, LEDs for output.
 
 ---
 
-## Linter
+## Linter & Elaboration
 
-### Linter Output
+### RTL Linter Report
 
 ``` tcl
-RTL Linter Report
-
-Table of Contents
------------------
-1. Summary
-
-1. Summary
-----------
-
-+---------+----------+--------------+----------+
-| Rule ID | Severity | # Violations | # Waived |
-+---------+----------+--------------+----------+
-
-
 INFO: [Synth 37-85] Total of 0 linter message(s) generated.
 INFO: [Synth 37-45] Linter Run Finished!
 ```
 
-### Post Elaboration Schematic
+### Post-Elaboration Schematic
 
-![Scematic](../images/project2/schem_elaborated_des.png)
+![Scematic](/images/project2/schem_elaborated_des.png)
 
 ---
 
@@ -57,7 +42,7 @@ INFO: [Synth 37-45] Linter Run Finished!
 
 ### Waveform
 
-![Simulation Result](../images/project2/waveform_behav_sim.png)
+![Simulation Result](/images/project2/waveform_behav_sim.png)
 
 ### Simulation Log
 
@@ -75,7 +60,7 @@ $finish called at time : 50 ns
 
 ## Synthesis
 
-### Synthesis Report Log
+### Synthesis Report
 
 ```tcl
 Start Writing Synthesis Report
@@ -96,14 +81,12 @@ Report Cell Usage:
 |3     |OBUF |     2|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2851.500 ; gain = 1302.223
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Finished Writing Synthesis Report
 ```
 
 ### Post-Synthesis Schematic
 
-![Scematic](../images/project2/schem_synth.png)
+![Scematic](/images/project2/schem_synth.png)
 
 ---
 
@@ -111,14 +94,13 @@ Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
 
 ### Utilization
 
-![Post-Implementation Utilization](../images/project2/utiliz_impl.png)
+![Post-Implementation Utilization](/images/project2/utiliz_impl.png)
 
 ---
 
-## Programming the FPGA & Observing the Outputs
+## Hardware Validation
 
 Demo Video:<br>
-<!-- [![Project Demo](https://img.youtube.com/vi/see_1Q9hq7s/maxresdefault.jpg)](https://youtube.com/shorts/see_1Q9hq7s?feature=share) -->
 <a href="https://youtube.com/shorts/see_1Q9hq7s?feature=share">
   <img src="https://img.youtube.com/vi/see_1Q9hq7s/maxresdefault.jpg"
        width="360" alt="Project Demo"/>
@@ -126,7 +108,7 @@ Demo Video:<br>
 
 ---
 
-## *Reference*
+## Reference
 
-- Project#2, Chapter-3 of the book
-- *Testbench*: page 72, Chapter-5 of the book
+- Project 2, Chapter 3 of the book
+- Testbench: page 72, Chapter 5 of the book

@@ -4,7 +4,7 @@
 ## Project Overview
 
 - Two slide switches select which of four LEDs blinks.
-- A 24-bit LFSR running on the 100 MHz system clock generates a periodic toggle pulse (once per `2^24 − 1` cycles, once evry 0.16 seconds approx.); a 1:4 demux routes that pulse to the LED selected by the switch combination.
+- A 24-bit LFSR running on the 100 MHz system clock generates a periodic toggle pulse (once per `2^24 - 1` cycles, once every 0.16 seconds approx.) and a 1:4 demux routes that pulse to the LED selected by the switch combination.
 
 **Project Structure**:
 
@@ -35,7 +35,7 @@ project_5.srcs
 
 ---
 
-## Post Elaboration Schematic
+## Post-Elaboration Schematic
 
 ![Post-Elaboration Schematic](/images/project5/schem_expanded_elaboration.png)
 
