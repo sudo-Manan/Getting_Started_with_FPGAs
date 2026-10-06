@@ -26,6 +26,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
+// DEPTH must be a power of 2. Gray-code full/empty detection is only else the design will not infer properly
 module async_fifo #(parameter WIDTH = 8, DEPTH = 64) (
     //write
     input logic wr_clk, wr_rst_n,
@@ -49,6 +50,13 @@ module async_fifo #(parameter WIDTH = 8, DEPTH = 64) (
     logic [ADDR_WIDTH:0] r1_rd_ptr_gray, r2_rd_ptr_gray;
 
     //write
+    // RAM bloack without reset
+    always_ff @(posedge wr_clk) begin
+        if (in_wr_en && !out_full)
+            r_mem[wr_ptr_bin[ADDR_WIDTH-1:0]] <= in_wr_data;
+    end
+    // wr_ptr_bin updated in the other block on same posedge wr_clk
+    
     always_ff @(posedge wr_clk or negedge wr_rst_n) begin
         if (!wr_rst_n) begin
             wr_ptr_bin <= 0;
@@ -57,8 +65,7 @@ module async_fifo #(parameter WIDTH = 8, DEPTH = 64) (
             r2_rd_ptr_gray <= 0;
         end
         else begin
-            if (in_wr_en && !out_full) begin
-                r_mem[wr_ptr_bin[ADDR_WIDTH-1:0]] <= in_wr_data;        
+            if (in_wr_en && !out_full) begin       
                 wr_ptr_bin <= wr_ptr_bin + 1;
                 wr_ptr_gray <= (wr_ptr_bin + 1) ^ ((wr_ptr_bin + 1) >> 1);
             end
@@ -68,6 +75,12 @@ module async_fifo #(parameter WIDTH = 8, DEPTH = 64) (
     end
 
     //read
+    always_ff @(posedge rd_clk) begin
+        if (in_rd_en && !out_empty)
+            out_rd_data <= r_mem[rd_ptr_bin[ADDR_WIDTH-1:0]];
+    end
+    // rd_ptr_bin updated in the other block on same posedge rd_clk
+
     always_ff @(posedge rd_clk or negedge rd_rst_n) begin
         if(!rd_rst_n) begin
             rd_ptr_bin <= 0;
@@ -79,7 +92,6 @@ module async_fifo #(parameter WIDTH = 8, DEPTH = 64) (
         else begin
             out_rd_valid <= in_rd_en && !out_empty;
             if (in_rd_en && !out_empty) begin
-                out_rd_data <= r_mem[rd_ptr_bin[ADDR_WIDTH-1:0]]; 
                 rd_ptr_bin <= rd_ptr_bin + 1;
                 rd_ptr_gray <= (rd_ptr_bin + 1) ^ ((rd_ptr_bin + 1) >> 1);
             end
